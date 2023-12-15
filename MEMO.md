@@ -5,3 +5,7 @@
 - 環境構築
   - Vueアプリの作成
   - Firebaseへのデプロイ
+
+## 12/15(金)
+- install bootstrap vue
+- 
