@@ -9,4 +9,4 @@
 ## 12/15(金)
 - install bootstrap vue
 - import BootstrapVue
-- 
+- create page folder,index.vue
