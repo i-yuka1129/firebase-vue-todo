@@ -20,6 +20,12 @@ module.exports = {
     'import/resolver': {
       webpack: {
         config: 'build/webpack.base.conf.js'
+      },
+      alias: {
+        map: [
+          ['@', './src'], // '@' を './src' にマッピング
+        ],
+        extensions: ['.js', '.vue', '.json'],
       }
     }
   },
@@ -27,7 +33,7 @@ module.exports = {
   rules: {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
-      js: 'never',
+      js: 'always',
       vue: 'never'
     }],
     // disallow reassignment of function parameters
@@ -46,13 +52,6 @@ module.exports = {
     }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    /*eslint linebreak-style: ["error", "windows"]*/
-    var:a = 'a', // \r\n
-    b : 'b', // \r\n
-    // \r\n
-    function:foo(params), // \r\n
-      // do stuff \r\n
-      // \r\n
-    'linebreak-style': ['error', 'windows'],
-  }
+    'linebreak-style': 'off',
+  },
 }

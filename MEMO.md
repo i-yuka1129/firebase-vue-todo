@@ -24,3 +24,9 @@
       // \r\n
     ``
     参考：https://eslint.org/docs/latest/rules/linebreak-style
+
+## 12/18(月)
+- eslintの設定
+ - エラーが発生し続けていたため、ESLint ルールを無効にする
+  ``` 'linebreak-style': 'off' ```
+  
