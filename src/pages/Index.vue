@@ -2,7 +2,7 @@
   <div>
     <h1>Todoリスト</h1>
     <todo-form @handleParentAddTodo="handleParentAddTodo" />
-    <todo-list />
+    <todo-list :todos="todos" />
   </div>
 </template>
 

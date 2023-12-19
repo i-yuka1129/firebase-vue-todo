@@ -1,8 +1,8 @@
 <template>
 <b-container>
-  <b-row class="mt-2">
+  <b-row :key="index" v-for="(todo, index) in todos" class="mt-2">
     <b-col cols="8" class="text-left">
-      <h5>テキスト</h5>
+      <h5>{{ todo.text }}</h5>
     </b-col>
     <b-col cols="4" class="text-right">
       <b-button>完了</b-button>
@@ -15,6 +15,7 @@
 <script>
 export default {
   name: 'TodoList',
+  props: ['todos'],
 };
 </script>
 
