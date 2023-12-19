@@ -7,6 +7,7 @@
 
 <script>
 import TodoForm from '@/components/TodoForm';
+import { BadgePlugin } from 'bootstrap-vue';
 
 export default {
   name: 'Todo',
@@ -17,6 +18,13 @@ export default {
     return {
       todos: [],
     };
+  },
+  methods: {
+    handleAddTodo(value) {
+      if (value) {
+        this.todos.push({ text: value });
+      }
+    },
   },
 };
 </script>
