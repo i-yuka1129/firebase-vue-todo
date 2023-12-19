@@ -13,6 +13,11 @@ export default {
   components: {
     TodoForm,
   },
+  data() {
+    return {
+      todos: [],
+    };
+  },
 };
 </script>
 
