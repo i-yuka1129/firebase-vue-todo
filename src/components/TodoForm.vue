@@ -3,7 +3,7 @@
     <b-input-group>
       <b-form-input type="text" />
       <b-input-group-append>
-        <b-button>Button</b-button>
+        <b-button variant="info">送信</b-button>
       </b-input-group-append>
     </b-input-group>
   </b-container>
