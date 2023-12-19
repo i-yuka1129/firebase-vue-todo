@@ -3,7 +3,7 @@
     <b-input-group>
       <b-form-input type="text" v-model="value"/>
       <b-input-group-append>
-        <b-button variant="info">送信</b-button>
+        <b-button variant="info" @click="handleAddTodo">送信</b-button>
       </b-input-group-append>
     </b-input-group>
   </b-container>
@@ -16,6 +16,11 @@ export default {
     return {
       value: '',
     };
+  },
+  methods: {
+    handleAddTodo() {
+      console.log(this.value);
+    },
   },
 };
 </script>
