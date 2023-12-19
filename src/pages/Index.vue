@@ -2,16 +2,19 @@
   <div>
     <h1>Todoリスト</h1>
     <todo-form @handleParentAddTodo="handleParentAddTodo" />
+    <todo-list />
   </div>
 </template>
 
 <script>
 import TodoForm from '@/components/TodoForm';
+import TodoList from '@/components/TodoList';
 
 export default {
   name: 'Todo',
   components: {
     TodoForm,
+    TodoList,
   },
   data() {
     return {
