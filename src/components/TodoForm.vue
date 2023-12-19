@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     handleAddTodo() {
-      console.log(this.value);
+      this.$emit('handleParentAddTodo', this.value);
     },
   },
 };

@@ -1,13 +1,12 @@
 <template>
   <div>
     <h1>Todoリスト</h1>
-    <todo-form />
+    <todo-form @handleParentAddTodo="handleParentAddTodo" />
   </div>
 </template>
 
 <script>
 import TodoForm from '@/components/TodoForm';
-import { BadgePlugin } from 'bootstrap-vue';
 
 export default {
   name: 'Todo',
@@ -20,7 +19,7 @@ export default {
     };
   },
   methods: {
-    handleAddTodo(value) {
+    handleParentAddTodo(value) {
       if (value) {
         this.todos.push({ text: value });
       }
