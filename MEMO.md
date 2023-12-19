@@ -29,4 +29,15 @@
 - eslintの設定
  - エラーが発生し続けていたため、ESLint ルールを無効にする
   ``` 'linebreak-style': 'off' ```
-  
+
+## 12/19(火)
+- eslintの設定
+  - 過去の研修資料を参考に設定
+    https://visualresearch.sharepoint.com/:u:/s/development2/EaiTTOUhrd5ChBfaBLyMgEABY7dsNmgOb60pB9usM-1kdw?e=30OkxW
+  - importエラーを解除するため、下記を追加
+    ```
+    "parserOptions": {
+    "sourceType": "module"
+    }
+    ```
+  - 原因がESlintの設定ではなく、ファイル名の大文字・小文字設定ミスのため、ESlintの設定を初期に戻し、微調整

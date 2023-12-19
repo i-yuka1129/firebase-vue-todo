@@ -6,7 +6,10 @@ module.exports = {
     parser: 'babel-eslint'
   },
   env: {
-    browser: true,
+    browser: false,
+    commonjs: true,
+    es6: true,
+    node: true
   },
   // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
@@ -20,12 +23,6 @@ module.exports = {
     'import/resolver': {
       webpack: {
         config: 'build/webpack.base.conf.js'
-      },
-      alias: {
-        map: [
-          ['@', './src'], // '@' を './src' にマッピング
-        ],
-        extensions: ['.js', '.vue', '.json'],
       }
     }
   },
@@ -33,7 +30,7 @@ module.exports = {
   rules: {
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
-      js: 'always',
+      js: 'never',
       vue: 'never'
     }],
     // disallow reassignment of function parameters
