@@ -2,7 +2,8 @@
   <div>
     <h1>Todoリスト</h1>
     <todo-form @handleParentAddTodo="handleParentAddTodo" />
-    <todo-list :todos="todos" />
+    <todo-list :todos="todos"
+    @handleParentDeleteTodo="handleParentDeleteTodo"/>
   </div>
 </template>
 
@@ -26,6 +27,9 @@ export default {
       if (value) {
         this.todos.unshift({ text: value });
       }
+    },
+    handleParentDeleteTodo(index) {
+      this.todos.splice(index, 1);
     },
   },
 };
