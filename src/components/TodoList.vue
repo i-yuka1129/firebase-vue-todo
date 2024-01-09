@@ -1,12 +1,15 @@
 <template>
 <b-container>
   <b-row :key="index" v-for="(todo, index) in todos" class="mt-2">
-    <b-col cols="8" class="text-left">
+    <b-col cols="8" :class="[{ line: todo.complete}, 'text-left']">
       <h5>{{ todo.text }}</h5>
     </b-col>
     <b-col cols="4" class="text-right">
-      <b-button>完了</b-button>
-      <b-button @click="handleParentDeleteTodo(index)">削除</b-button>
+      <b-button @click="handleCompleteTodo(index)"
+      :variant="todo.complete ? '' : 'success'">
+        {{ todo.complete ? '完了' : '未完了'}}
+      </b-button>
+      <b-button @click="handleDeleteTodo(index)" variant="danger">削除</b-button>
     </b-col>
   </b-row>
 </b-container>
@@ -17,13 +20,18 @@ export default {
   name: 'TodoList',
   props: ['todos'],
   methods: {
-    handleParentDeleteTodo(index) {
+    handleDeleteTodo(index) {
       this.$emit('handleParentDeleteTodo', index);
+    },
+    handleCompleteTodo(index) {
+      this.$emit('handleParentCompleteTodo', index);
     },
   },
 };
 </script>
 
 <style scoped>
-
+  .line {
+    text-decoration: line-through;
+  }
 </style>
